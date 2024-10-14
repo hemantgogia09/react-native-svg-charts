@@ -73,11 +73,11 @@ const Direction = {
 
 const Grid = ({ direction, ...props }) => {
     if (direction === Direction.VERTICAL) {
-        return <Vertical {...props} />
+        return <Vertical {...defaultProps} {...props} />
     } else if (direction === Direction.HORIZONTAL) {
-        return <Horizontal {...props} />
+        return <Horizontal {...defaultProps} {...props} />
     } else if (direction === Direction.BOTH) {
-        return <Both {...props} />
+        return <Both {...defaultProps} {...props} />
     }
 
     return null
@@ -91,7 +91,7 @@ Grid.propTypes = {
     svg: PropTypes.object,
 }
 
-Grid.defaultProps = {
+const defaultProps = {
     direction: Direction.HORIZONTAL,
     belowChart: true,
 }
